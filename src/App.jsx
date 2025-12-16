@@ -24,7 +24,7 @@ const App = () => {
         status: "Disponible para contratación",
         role: "Técnico SMR | Estudiante DAM",
         description: "Enfocado en el desarrollo de aplicaciones y la administración de sistemas Linux. Busco crear soluciones prácticas uniendo programación e infraestructura.",
-        cta_primary: "Ver Proyectos",
+        cta_primary: "Ver Trayectoria",
         cta_secondary: "Descargar CV"
       },
       value: {
@@ -52,7 +52,7 @@ const App = () => {
         status: "Available for hire",
         role: "SMR Technician | DAM Student",
         description: "Focused on application development and Linux system administration. Aiming to build practical solutions by combining coding and infrastructure.",
-        cta_primary: "View Projects",
+        cta_primary: "View Career",
         cta_secondary: "Download CV"
       },
       value: {
