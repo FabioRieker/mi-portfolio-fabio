@@ -28,7 +28,7 @@ const App = () => {
         cta_secondary: "Descargar CV"
       },
       value: {
-        title: "Ingeniería & Sistemas",
+        title: "Desarrollo & Sistemas",
         subtitle: "Un enfoque híbrido para problemas complejos",
         card1: { title: "Desarrollo Backend", content: "Arquitectura de software sólida con Java y Spring Boot. Código limpio, patrones de diseño y APIs RESTful optimizadas." },
         card2: { title: "Sistemas Linux", content: "Administración avanzada de servidores, scripting en Bash y automatización de tareas. Control total sobre el entorno de ejecución." },
@@ -56,7 +56,7 @@ const App = () => {
         cta_secondary: "Download CV"
       },
       value: {
-        title: "Engineering & Systems",
+        title: "Development & Systems",
         subtitle: "A hybrid approach to complex problems",
         card1: { title: "Backend Development", content: "Solid software architecture with Java and Spring Boot. Clean code, design patterns, and optimized RESTful APIs." },
         card2: { title: "Linux Systems", content: "Advanced server administration, Bash scripting, and task automation. Full control over the execution environment." },
