@@ -114,7 +114,7 @@ IA: Fabio combina lo mejor de dos mundos: la administración de sistemas Linux y
             <div ref={messagesEndRef} />
           </div>
           <div className="p-4 bg-white/5 border-t border-white/10 flex gap-2">
-            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSend()} placeholder="Ask me something..." className="flex-1 bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-white font-mono text-sm focus:outline-none focus:border-cyan-500/50" />
+            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSend()} placeholder="Ask me something..." className="flex-1 bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-white font-mono text-base md:text-sm focus:outline-none focus:border-cyan-500/50" />
             <button onClick={handleSend} disabled={isLoading} className="bg-cyan-500/20 text-cyan-400 p-2 rounded-lg"><Send size={18} /></button>
           </div>
         </motion.div>

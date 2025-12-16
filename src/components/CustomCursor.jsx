@@ -81,12 +81,12 @@ const CustomCursor = () => {
   } ${isVisible ? 'opacity-100' : 'opacity-0'}`;
 
   return (
-    <>
+    <div className="hidden md:block">
       <div ref={cursorDotRef} className={dotClasses} />
       <div ref={cursorRingRef} className={ringClasses}>
         <div className={`w-full h-full rounded-full border border-white/20 animate-ping absolute inset-0 ${isHovering ? 'opacity-30' : 'opacity-0'}`} />
       </div>
-    </>
+    </div>
   );
 };
 
