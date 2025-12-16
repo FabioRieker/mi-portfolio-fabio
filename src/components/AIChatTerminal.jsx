@@ -55,7 +55,7 @@ IA: Fabio combina lo mejor de dos mundos: la administración de sistemas Linux y
          await new Promise(r => setTimeout(r, 1000));
          aiResponseText = "Modo Demo: Configura VITE_GEMINI_API_KEY para respuestas reales.";
       } else {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-001:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ contents: [{ parts: [{ text: `System Context: ${systemContext}\n\nUser Question: ${input}` }] }] })
