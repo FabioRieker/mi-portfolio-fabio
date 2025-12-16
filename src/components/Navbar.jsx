@@ -20,10 +20,10 @@ const Navbar = ({ lang, setLang, t }) => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-6'}`}
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className={`backdrop-blur-xl bg-black/20 border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-cyan-500/5 transition-all duration-300 ${scrolled ? 'bg-black/80 border-white/10 shadow-purple-500/20' : ''}`}>
+        <div className={`relative backdrop-blur-xl bg-black/20 border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-cyan-500/5 transition-all duration-300 ${scrolled ? 'bg-black/80 border-white/10 shadow-purple-500/20' : ''}`}>
           <a href="#home" className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 hover:brightness-125 transition-all">FR.</a>
-          <div className="hidden md:flex items-center gap-8">
-            {[t.nav.home, t.nav.about, t.nav.work, t.nav.experience].map((item, idx) => (
+          <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-8">
+            {[t.nav.home, t.nav.work, t.nav.experience].map((item, idx) => (
                <a key={idx} href={`#${Object.keys(t.nav)[idx]}`} className="text-sm font-medium text-zinc-300 hover:text-white transition-colors relative group">{item}</a>
             ))}
           </div>
@@ -41,7 +41,7 @@ const Navbar = ({ lang, setLang, t }) => {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl"
         >
-          {[t.nav.home, t.nav.about, t.nav.work, t.nav.experience].map((item, idx) => (
+          {[t.nav.home, t.nav.work, t.nav.experience].map((item, idx) => (
              <a key={idx} href={`#${Object.keys(t.nav)[idx]}`} onClick={() => setIsOpen(false)} className="text-lg font-medium text-zinc-300 hover:text-white">{item}</a>
           ))}
           <div className="flex items-center gap-4 mt-4 pt-4 border-t border-white/10">

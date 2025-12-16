@@ -19,21 +19,21 @@ const App = () => {
   const [lang, setLang] = useState('es');
   const translations = {
     es: {
-      nav: { home: "Inicio", about: "Sobre mí", work: "Valores", experience: "Trayectoria", contact: "Contactar" },
+      nav: { home: "Inicio", work: "Valores", experience: "Trayectoria", contact: "Contactar" },
       hero: {
         status: "Disponible para contratación",
         role: "Técnico SMR | Estudiante DAM",
-        description: "Especializado en el desarrollo de software robusto y la administración de sistemas Linux. Construyo soluciones escalables donde el código eficiente se encuentra con una infraestructura sólida.",
+        description: "Enfocado en el desarrollo de aplicaciones y la administración de sistemas Linux. Busco crear soluciones prácticas uniendo programación e infraestructura.",
         cta_primary: "Ver Proyectos",
         cta_secondary: "Descargar CV"
       },
       value: {
         title: "Desarrollo & Sistemas",
-        subtitle: "Un enfoque híbrido para problemas complejos",
-        card1: { title: "Desarrollo Backend", content: "Arquitectura de software sólida con Java y Spring Boot. Código limpio, patrones de diseño y APIs RESTful optimizadas." },
-        card2: { title: "Sistemas Linux", content: "Administración avanzada de servidores, scripting en Bash y automatización de tareas. Control total sobre el entorno de ejecución." },
-        card3: { title: "Infraestructura Cloud", content: "Despliegue y gestión de servicios en AWS. Contenedorización con Docker para entornos consistentes y escalables." },
-        card4: { title: "Seguridad & Redes", content: "Implementación de buenas prácticas de seguridad desde el diseño. Configuración de redes seguras y monitoreo de sistemas." }
+        subtitle: "Aprendizaje continuo en desarrollo y sistemas",
+        card1: { title: "Desarrollo Backend", content: "Desarrollo backend con Java y Spring Boot. Enfocado en escribir código limpio y aprender buenas prácticas de diseño." },
+        card2: { title: "Sistemas Linux", content: "Gestión de servidores Linux y scripting en Bash. Interés en la automatización y el control del sistema." },
+        card3: { title: "Infraestructura Cloud", content: "Experiencia básica desplegando servicios en AWS y uso de Docker para crear entornos de desarrollo consistentes." },
+        card4: { title: "Seguridad & Redes", content: "Interés en la seguridad informática y configuración de redes. Aprendiendo a proteger sistemas y comunicaciones." }
       },
       tech: { title: "Arsenal Tecnológico" },
       experience: {
@@ -43,25 +43,25 @@ const App = () => {
       },
       contact: {
         title: "¿Listo para colaborar?",
-        subtitle: "Busco oportunidades donde pueda aplicar mi visión integral de desarrollo y sistemas para crear valor real."
+        subtitle: "Busco oportunidades para seguir aprendiendo y aportar mis conocimientos en desarrollo y sistemas."
       }
     },
     en: {
-      nav: { home: "Home", about: "About", work: "Values", experience: "Career", contact: "Contact" },
+      nav: { home: "Home", work: "Values", experience: "Career", contact: "Contact" },
       hero: {
         status: "Available for hire",
         role: "SMR Technician | DAM Student",
-        description: "Specialized in robust software development and Linux system administration. Building scalable solutions where efficient code meets solid infrastructure.",
+        description: "Focused on application development and Linux system administration. Aiming to build practical solutions by combining coding and infrastructure.",
         cta_primary: "View Projects",
         cta_secondary: "Download CV"
       },
       value: {
         title: "Development & Systems",
-        subtitle: "A hybrid approach to complex problems",
-        card1: { title: "Backend Development", content: "Solid software architecture with Java and Spring Boot. Clean code, design patterns, and optimized RESTful APIs." },
-        card2: { title: "Linux Systems", content: "Advanced server administration, Bash scripting, and task automation. Full control over the execution environment." },
-        card3: { title: "Cloud Infrastructure", content: "Deployment and management of services on AWS. Containerization with Docker for consistent and scalable environments." },
-        card4: { title: "Security & Networks", content: "Implementation of security best practices by design. Secure network configuration and system monitoring." }
+        subtitle: "Continuous learning in development and systems",
+        card1: { title: "Backend Development", content: "Backend development with Java and Spring Boot. Focused on writing clean code and learning design best practices." },
+        card2: { title: "Linux Systems", content: "Linux server management and Bash scripting. Interested in automation and system control." },
+        card3: { title: "Cloud Infrastructure", content: "Basic experience deploying services on AWS and using Docker for consistent development environments." },
+        card4: { title: "Security & Networks", content: "Interest in cybersecurity and network configuration. Learning to secure systems and communications." }
       },
       tech: { title: "Tech Arsenal" },
       experience: {
@@ -71,7 +71,7 @@ const App = () => {
       },
       contact: {
         title: "Ready to collaborate?",
-        subtitle: "Seeking opportunities where I can apply my comprehensive vision of development and systems to create real value."
+        subtitle: "Seeking opportunities to continue learning and contributing my skills in development and systems."
       }
     }
   };
