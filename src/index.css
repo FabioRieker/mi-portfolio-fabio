@@ -4,11 +4,12 @@
 
 /* FORZAMOS EL COLOR DE FONDO AQUÍ */
 /* Esto evita la pantalla blanca si Tailwind tarda en cargar o falla */
-body {
+body, a, button, input, textarea, select, [role="button"] {
   background-color: #020205; /* Negro casi puro */
   color: #ffffff;
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
+  cursor: none !important;
 }
 
 /* Custom Scrollbar */
