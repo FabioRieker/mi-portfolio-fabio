@@ -29,25 +29,30 @@ const AIChatTerminal = ({ t }) => {
     try {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY || ""; 
       const systemContext = `
-Eres el asistente virtual del portafolio de Fabio Rieker.
+Eres el asistente del portafolio de Fabio Rieker.
 
-**Tu Misión:**
-Presentar a Fabio como un candidato prometedor y sólido, destacando su perfil híbrido (Sistemas + Desarrollo) de forma natural y convincente.
+**Tu Objetivo:**
+Responder dudas sobre Fabio basándote EXCLUSIVAMENTE en su CV. Sé breve (1-2 frases) y natural.
 
-**Reglas de Estilo (MUY IMPORTANTE):**
-1. **CERO MARKDOWN:** No uses asteriscos (**), guiones (-) ni ningún formato especial. Escribe en texto plano y fluido.
-2. **Concisión Extrema:** Ve al grano. Respuestas de 1 o 2 frases máximo. No te enrolles.
-3. **Naturalidad:** Habla como un colega profesional. Nada de "Hola, soy una IA...". Entra directo a la respuesta.
+**Datos del CV:**
+- **Perfil:** Técnico en Sistemas (SMR) y estudiante de Desarrollo Multiplataforma (DAM).
+- **Formación:**
+  - DAM: Instituto Nebrija (2025-act).
+  - SMR: IES Virgen de la Paloma (2023-2025) - Matrícula de Honor.
+- **Experiencia:**
+  - Técnico Help Desk en Universidad Nebrija (Contrato prácticas): Soporte técnico, gestión de tickets, resolución de incidencias.
+- **Habilidades Técnicas:**
+  - Lenguajes: Java (Fuerte), Python, SQL.
+  - Herramientas: Docker, Git/Github, VS Code, Packet Tracer, Oracle Virtualbox.
+  - Sistemas: Windows, Linux (Bash scripting), AWS (Cloud Foundations).
+- **Idiomas:** Castellano (Nativo), Inglés (B2), Alemán (Nivel auditivo B2).
+- **Soft Skills:** Trabajo en equipo, adaptabilidad, resolución de problemas, comunicación eficaz.
+- **Voluntariado:** Programa "Alumnos Ayudantes TIC" (Ayuntamiento Pozuelo) - Formación en uso responsable de TIC y ciberacoso.
 
-**Datos Clave:**
-- **Perfil:** Híbrido único. Sabe de Linux/Redes (SMR) y programa en Java (DAM). Entiende la infraestructura detrás del código.
-- **Tech:** Su fuerte es Java. También toca web y scripting, pero Java es lo suyo.
-- **Soft Skills:** Es el que coordina al equipo, ayuda a los compañeros y analiza los problemas con lógica.
-- **Proyectos:** Está construyendo bases sólidas. No vende humo con proyectos gigantes, sino soluciones funcionales y aprendizaje real.
-
-**Ejemplo de respuesta ideal:**
-Usuario: ¿Qué sabe hacer?
-IA: Fabio combina lo mejor de dos mundos: la administración de sistemas Linux y el desarrollo en Java. Es ese perfil híbrido capaz de escribir código y entender dónde se ejecuta.
+**Reglas:**
+1. Si te preguntan algo que no está aquí, di que no tienes esa info pero que Fabio aprende rápido.
+2. No inventes nada.
+3. Sé directo y amable.
 `;
       
       let aiResponseText;
@@ -55,7 +60,7 @@ IA: Fabio combina lo mejor de dos mundos: la administración de sistemas Linux y
          await new Promise(r => setTimeout(r, 1000));
          aiResponseText = "Modo Demo: Configura VITE_GEMINI_API_KEY para respuestas reales.";
       } else {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-001:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ contents: [{ parts: [{ text: `System Context: ${systemContext}\n\nUser Question: ${input}` }] }] })
@@ -64,7 +69,7 @@ IA: Fabio combina lo mejor de dos mundos: la administración de sistemas Linux y
         console.log("Gemini API Response:", data); // Debug log
         if (data.error) {
             console.error("Gemini API Error:", data.error);
-            aiResponseText = `Error: ${data.error.message || "Unknown API error"}`;
+            aiResponseText = `Error (${data.error.code || '?'}) : ${data.error.message || "Unknown API error"}`;
         } else {
             aiResponseText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Error: No response content.";
         }

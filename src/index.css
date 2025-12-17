@@ -9,22 +9,29 @@ body, a, button, input, textarea, select, [role="button"] {
   color: #ffffff;
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
-  cursor: none !important;
 }
 
-/* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+/* Desktop: Hide system cursor everywhere */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
 }
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+
+/* Mobile: Restore system cursor */
+@media (max-width: 767px) {
+  * {
+    cursor: auto !important;
+  }
 }
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(6, 182, 212, 0.3);
-  border-radius: 10px;
+
+/* Hide Scrollbar but keep functionality */
+::-webkit-scrollbar {
+  display: none;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.5);
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Animations */

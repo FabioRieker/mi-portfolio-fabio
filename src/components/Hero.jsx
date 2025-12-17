@@ -48,9 +48,6 @@ const Hero = ({ t }) => {
           transition={{ ...smoothSpring, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a href="#experience" className="w-full sm:w-auto px-8 py-3.5 bg-white text-black font-semibold rounded-full hover:scale-105 transition-all flex items-center justify-center gap-2">
-            {t.hero.cta_primary} <ChevronRight size={18} />
-          </a>
           <a href="/cv.pdf" target="_blank" className="w-full sm:w-auto px-8 py-3.5 bg-white/5 text-white border border-white/20 font-medium rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-2">
             <Download size={18} /> {t.hero.cta_secondary}
           </a>
