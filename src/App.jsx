@@ -762,7 +762,7 @@ const App = () => {
         <Timeline t={t} />
       </main>
       <Footer t={t} />
-      <AIChatTerminal t={t} />a
+      {/* <AIChatTerminal t={t} /> */}
     </div>
   );
 };
